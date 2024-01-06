@@ -1,0 +1,325 @@
+// 该文件中的变量是全局变量，在css文件和vue组件中可以直接使用
+
+$mainColor: #409eff; // 网站主题色
+// $mainGradation: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+// $mainGradation: linear-gradient(to bottom, #fdfbfb 0%, #e2e2e2 100%); // 主题渐变色
+$mainGradation: var(--gradation); // 主题渐变色
+$mainBg: var(--bgColor); // 主题背景色
+$mainLogoText: var(--logoText); // 
+$mainLine: #e7e7e7a2; // 主题边线色
+$mainShadow: #e7e7e7a2; // 主题阴影色
+
+$mainAdd: #409fff; // 系统新增色
+$mainAddDark: #0080ff; // 系统新增色（深色）
+$mainDelete: #df5757; // 系统删除色
+$mainDeleteDark: #e00000; // 系统删除色（深色）
+
+$mainSelectLine: 1px solid #8f8f8f;
+
+// 侧边栏
+$menuBg: $mainBg; // 菜单背景颜色
+$menuTextColor: #444444; // 菜单文字颜色
+$menuHover: #e2e2e2; // 鼠标经过菜单时的背景颜色
+$collapseMenuActiveBg: #e0e0e0; // 菜单宽度折叠后，已选中菜单的背景颜色
+// $menuBg: #304156; // 菜单背景颜色
+// $menuTextColor: #fff; // 菜单文字颜色
+// $menuHover: #263445; // 鼠标经过菜单时的背景颜色
+$menuActiveTextColor: $mainColor; // 已选中菜单文字颜色
+$menuActiveBg: none; // 已选中菜单背景颜色
+$subMenuBg: #1f2d3d; // 子菜单背景颜色
+$subMenuHover: #001528; // 鼠标经过子菜单时的背景颜色
+// $collapseMenuActiveBg: #1f2d3d; // 菜单宽度折叠后，已选中菜单的背景颜色
+$collapseMenuActiveColor: $menuTextColor; // 菜单宽度折叠后，已选中菜单的文字颜色
+$collapseMenuActiveBorderColor: $mainColor; // 菜单宽度折叠后，已选中菜单的边框颜色
+$collapseMenuActiveBorderWidth: 2px; // 菜单宽度折叠后，已选中菜单的边框宽度
+$arrowColor: #909399; // 展开/收起箭头颜色
+$horizontalMenuHeight: 40px; // 菜单栏水平排列时候的高度
+
+
+:root {
+    --bgColor: #fdfbfb;
+    --gradation: linear-gradient(to bottom, #fdfbfb 0%, #e2e2e2 100%);
+    --logoText: #222222;
+    // --gradationLineFrom: #ffffff;
+    // --gradationLineTo: #e7e7e7a2;
+    // --gradationLine: #e7e7e7a2;
+}
+
+:root.dark {
+    --bgColor: #202020;
+    --gradation: linear-gradient(to bottom, rgba(36, 36, 36, 0.808) 0%, #141414 100%);
+    --logoText: #ffffff;
+}
+
+// 渐变
+.transition-1s {
+    transition: all 1s;
+}
+
+.transition-500ms {
+    transition: all 0.5s;
+}
+
+.transition-250ms {
+    transition: all 0.25s;
+}
+
+.transition-100ms {
+    transition: all 0.1s;
+}
+
+.trans-250ms-ease-in-out {
+    transition: all 0.25s ease-in-out;
+}
+
+.trans-opacity-250ms {
+    transition: opacity 0.25s;
+}
+
+/* 渐变线 */
+// .gradation-line-up-to-down {
+//     border-bottom: 1px solid var(--gradationLine);
+//     background: -webkit-gradient(linear, left top, left bottom, from(var(--gradationLineFrom)), to(var(--gradationLineFrom)));
+//     background: -o-linear-gradient(var(--gradationLineFrom), var(--gradationLineTo));
+//     background: linear-gradient(var(--gradationLineFrom), var(--gradationLineTo));
+//     height: 7px;
+// }
+
+// .gradation-line-down-to-up {
+//     border-bottom: 1px solid var(--gradationLine);
+//     background: -webkit-gradient(linear, left top, left bottom, from(var(--gradationLineTo)), to(var(--gradationLineTo)));
+//     background: -o-linear-gradient(var(--gradationLineTo), var(--gradationLineFrom));
+//     background: linear-gradient(var(--gradationLineTo), var(--gradationLineFrom));
+//     height: 7px;
+// }
+
+/* 定义滚动条样式 */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+    background-color: rgba(240, 240, 240, 0);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(231, 231, 231, 0);
+    border-radius: 10px;
+    background-color: rgba(146, 146, 146, 0);
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 0px rgba(180, 180, 180, 0);
+    background-color: rgba(206, 206, 206, 0.493);
+}
+
+
+// 开发使用的边框
+.l {
+    border: 1px solid red;
+}
+
+// 页面内边框
+.view {
+    padding: 0 20px;
+}
+
+// 页面标题
+.view-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #474747;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+
+    .view-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
+// 普通的输入框
+// .nomal-input {
+//     width: 20%;
+// }
+
+// 点
+.dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+// el-text在pro-table中不生效
+.fix-el-text-primary {
+    color: #199aff;
+}
+
+// 表格文字水平分隔线
+.table-text-horizontal-cutting-line {
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #afafaf;
+}
+
+.color-status-0 {
+    background-color: #cecece;
+    border: 1px solid #cecece;
+}
+
+.color-status-1 {
+    background-color: #51c41b;
+    border: 1px solid #51c41b;
+}
+
+.color-status-2 {
+    background-color: red;
+    border: 1px solid red;
+}
+
+/* -------------- 表单（只能在此穿透） ------------------ */
+
+::v-deep .el-dialog__body {
+    padding: 30px 50px 30px 45px;
+}
+
+/* -------------- 表格 ------------------ */
+
+// 表格上方左半部分（标题）
+.th-left {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #474747;
+    letter-spacing: 1px;
+}
+
+// 表格上方右半部分（工具）
+.th-right {
+    padding-right: 10px;
+    display: flex;
+
+    .th-right-item {
+        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    .th-right-item-with-text {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        color: $mainDelete;
+
+        .th-right-item-icon {
+            font-size: 20px;
+        }
+
+        .th-right-item-text {
+            font-size: 12px;
+            margin-left: 5px;
+        }
+    }
+
+
+    .add-btn:hover {
+        color: $mainAddDark;
+        cursor: pointer;
+    }
+
+    .batch-delete-btn:hover {
+        color: $mainDeleteDark;
+        cursor: pointer;
+    }
+
+}
+
+
+// 表格的边框和最小高度
+::v-deep .page-box .head {
+    padding-bottom: 25px;
+}
+
+::v-deep .page-box .table {
+    padding: 0px 30px;
+    min-height: 40vh;
+}
+
+::v-deep .page-box .pagination {
+    padding-top: 25px;
+}
+
+// 修复分页最右边边框
+::v-deep .el-pagination__editor {
+    padding-right: 10px;
+}
+
+// 表格搜索栏
+::v-deep .page-box .search {
+    padding: 25px 30px;
+    margin-bottom: 15px;
+    // box-shadow: 5px 5px 20px #eeeeee;
+
+    .el-form-item {
+        margin-bottom: 0px;
+    }
+}
+
+::v-deep .el-form--inline .el-form-item {
+    // 不是0的话，会默认一个大于0的值，使右边的按钮与内容不对齐
+    margin-right: 0px;
+
+    .el-form-item__label {
+        font-size: 15px;
+    }
+}
+
+// 表格表头字体加深
+::v-deep .el-table thead {
+    color: #2b2b2bea;
+}
+
+// 状态栏
+.status-slot {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    .status-slot_inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 60%;
+
+
+        .status-text {
+            // position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px 0 5px;
+            // left: 20%;
+        }
+        .status-dot {
+            position: relative;
+            // width: 10px;
+            // height: 10px;
+            // left: 10%;
+            // top: 45%;
+        }
+    }
+}
+
+// 转换ELMessageBox的确定和取消按钮
+.el-message-box__btns button:nth-child(2) {
+    margin-left: -130px !important;
+    margin-right: 70px !important;
+}
